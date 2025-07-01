@@ -1,0 +1,59 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+/* Reset básico */
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+}
+header.fixed + main {
+  margin-top: 120px; // Ajusta este valor a la altura real de tu header
+}
+
+
+body {
+  font-family: v.$fuente_principal;
+  line-height: 2;
+  color: v.$gris-texto;
+  background: v.$gris;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  font-family: v.$fuente_principal;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+h1 {
+  font-size: 3rem;
+  @include m.tablet { font-size: 2.2rem; }
+  @include m.telefono { font-size: 2rem; }
+}
+
+h2 {
+  font-size: 2rem;
+  color: v.$azul;
+  text-align: center;
+  margin-bottom: 5rem 5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: v.$azul;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 5px;
+  display: block;
+}
+

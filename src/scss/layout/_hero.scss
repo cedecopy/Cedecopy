@@ -1,0 +1,63 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.hero {
+  background: url('hero-bg.jpg') center center/cover no-repeat;
+  color: #181717;
+  text-align: center;
+  padding: 6rem 2rem;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+
+    @include m.tablet {
+      font-size: 2.2rem;
+    }
+    @include m.telefono {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+    @include m.tablet {
+      font-size: 1rem;
+    }
+  }
+
+  .presupuesto-btn,
+  button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(90deg, #27d2f0 0%, #0c92cf 100%);
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem 2.2rem;
+    border-radius: 30px;
+    font-size: 1.15rem;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(18, 140, 126, 0.08);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+    gap: 0.8rem;
+    margin-top: 1rem;
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(90deg, #2f68d3 0%, #255cd3 100%);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(3, 69, 192, 0.87);
+      text-decoration: none;
+      color: #fff;
+      outline: none;
+    }
+  }
+
+  @include m.telefono {
+    padding: 3rem 1rem;
+  }
+}
