@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CEDECOPY</title>
+    <link rel="stylesheet" href="build/css/app.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+          <a href="index.html" class="logo-link">
+            <img src="src/img/cedecopy34.png" alt="CEDECOPY" class="logo-img">
+          </a>
+        </div>
+        <div class="header-bottom">
+          <button id="menu-button" class="menu-icon" aria-label="Abrir menú" aria-expanded="false">
+            <span>☰</span>
+          </button> 
+          <nav id="main-nav">
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="reparacion.html">Reparación y Mantenimiento</a></li>
+              <!-- <li><a href="#">Impresoras</a></li>
+              <li><a href="#">Toner</a></li>
+              <li><a href="#">Renta de impresoras</a></li>
+              <li><a href="#">Consumibles</a></li>
+              <li><a href="#">Refacciones</a></li>  -->
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+    <main>
+        <section id="inicio" class="hero">
+            <h1> Reparación y Mantenimiento</h1>
+            <p> Solicita tu presupuesto ahora, te damos buen precio y el mejor servicio contamos con mas de 20 años en la industria de, reparacion de equipo de copiado, multifuncionales. </p>
+            <a href="https://api.whatsapp.com/send/?phone=5531992894" class="presupuesto-btn" target="_blank" rel="noopener noreferrer">
+                Solicitar un presupuesto
+            </a>
+        </section>
+
+
+        <section id="servicios">
+            <div class="servicios-lista">
+                <article class="servicio-item">
+                    <h2>Reparación</h2>
+                    <picture>
+                        <source srcset="build/img/Mantenimiento.avif" type="image/avif"/>
+                        <source srcset="build/img/Mantenimiento.webp" type="image/webp"/>
+                        <img loading="lazy" src="build/img/Mantenimiento.jpg" alt="">
+                    </picture>
+                    <p>Si tu equipo se daño y necesitas, reparacion inmediata, comunicate con nosotros y te hacemos tu presupuesto para que tu equipo quede como nuevo. </p>
+                </article>
+                <article class="servicio-item">
+                    <h2>Mantenimiento</h2>
+                    <picture>
+                        <source srcset="build/img/Reparacion.avif" type="image/avif"/>
+                        <source srcset="build/img/Reparacion.webp" type="image/webp"/>
+                        <img loading="lazy" src="build/img/Reparacion.jpg" alt="">
+                    </picture>
+                    <p>Solicita tu presupuesto, para darle mantenimiento a tu equipo, comunicate con nosotros y nosotros te damos, el mejor precipo y el mejor servicio a tu equipo</p>
+                </article>
+               
+            </div>
+
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="ubicacion">
+            <h2>Ubicación</h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481819.8627539268!2d-99.31428142334357!3d19.359725081095416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e2acce4173e5%3A0x72a4a2ab5da4914d!2sCEDECOPY!5e0!3m2!1ses!2smx!4v1748885180766!5m2!1ses!2smx" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Mapa de ubicación de CEDECOPY"></iframe>
+                <h6>Octavio Sentíes Local 2, 2da Amp Santiago Acahualtepec, Iztapalapa, 09608 Ciudad de México, CDMX</h6>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container container">
+            <div class="footer-section direccion">
+                <h3>Dirección</h3>
+                <p>Octavio Sentíes Local 2</p>
+                <p>2da Amp Santiago Acahualtepec</p>
+                <p>Iztapalapa, 09608 Ciudad de México, CDMX</p>
+            </div>
+            <div class="footer-section redes-sociales">
+                <h3>Síguenos</h3>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contacto">
+                <h3>Contacto</h3>
+                <p>Teléfono: +52 55 31 99 28 94</p>
+                <p>Email: contacto@cedecopy.com</p>
+            </div>
+        </div>
+        <p class="footer-copy">© 2025 CEDECOPY. Todos los derechos reservados.</p>
+    </footer>
+    
+ <script type="module" src="build/js/app.js"></script>
+
+</body>
+</html>

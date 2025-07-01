@@ -1,0 +1,136 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+header {
+  background: v.$blanco;
+  padding: 1rem 2rem;
+
+  .header-top {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0rem;
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: v.$blanco;
+
+      .logo-img {
+        height: 100px;
+        width: auto;
+        align-items: center;
+      }
+    }
+  }
+
+  .header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Modificado para alinear los elementos a los extremos */
+    gap: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 0rem;
+
+    .menu-icon {
+      font-size: 2rem;
+      background: transparent;
+      color: v.$negro; /* Modificado para que el icono sea visible */
+      border: none;
+      cursor: pointer;
+      display: none; /* Oculto por defecto */
+
+      @include m.tablet {
+        display: block; /* Visible en tablet y dispositivos más pequeños */
+        background: v.$blanco;
+        border-radius: 5px;
+        padding: 0.2rem 0.7rem;
+        margin-right: 1rem;
+        position: relative;
+        z-index: 1001;
+      }
+    }
+
+    #main-nav {
+      gap: 2rem;
+      width: 100%; /* Añadido para que el menú ocupe todo el ancho */
+      display: flex;
+      justify-content: center;
+      
+     
+      @include m.tablet {
+        display: none; /* Ocultar el menú en tablet y dispositivos más pequeños */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: v.$blanco;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        flex-direction: column;
+        align-items: center; /* Centrar los elementos del menú */
+
+        &.open {
+          display: flex; /* Mostrar el menú cuando la clase 'open' está presente */
+        }
+      }
+
+      ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        @include m.tablet {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        li a {
+          color: v.$negro;
+          text-decoration: none;
+          font-weight: 600;
+          white-space: nowrap;
+          font-size: 1rem;
+          padding: 0.5rem 0;
+          display: inline-block;
+          transition: color 0.3s ease;
+
+          &:hover,
+          &:focus {
+            color: v.$azul-menu;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Header fijo (fuera del bloque anidado)
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2000;
+  background: v.$blanco;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+// Ajuste para que el contenido no quede oculto
+header.fixed + main {
+  margin-top: 120px; // Ajusta este valor a la altura de tu header
+}
+
+#main-nav {
+  left: -300px;
+  transition: left 0.3s ease;
+ 
+
+  &.open {
+    left: 0;
+  }
+}

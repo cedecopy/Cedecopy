@@ -1,0 +1,105 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+#contacto {
+  background: #f7fbff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,77,153,0.08);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  margin: 6rem auto 6rem auto;
+  max-width: 520px;
+
+  h2 {
+    color: #004d99;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  form {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      position: relative;
+    }
+
+    label {
+      font-weight: 600;
+      color: #004d99;
+      display: flex;
+      align-items: center;
+    }
+
+    input, textarea {
+      padding: 0.9rem 1.1rem;
+      border: 1.5px solid #b0c4de;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f9fcff;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 8px rgba(0,77,153,0.03);
+
+      &:focus {
+        border-color: #2585d3;
+        outline: none;
+        box-shadow: 0 0 0 2px #25d36633;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button[type="submit"] {
+      background: linear-gradient(90deg, #27d2f0 0%, #0c92cf 100%);
+      color: v.$blanco;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(18, 140, 126, 0.08);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-top: 0.5rem;
+
+      &:hover,
+      &:focus {
+        background: linear-gradient(90deg, #2f68d3 0%, #255cd3 100%);
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(3, 69, 192, 0.87);
+        outline: none;
+      }
+    }
+  }
+
+  @include m.telefono {
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    margin: 1rem 0 0 0.5rem;
+    border-radius: 10px;
+
+    form {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 1rem 0;
+    }
+  }
+}
