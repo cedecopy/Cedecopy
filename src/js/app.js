@@ -11,7 +11,9 @@ function navegacionFija() {
   const header = document.querySelector('header');
   const hero = document.querySelector('.hero'); // O la sección que esté justo debajo del header
 
+
   if (!header || !hero) return; // Si no existen, no ejecutes la función
+
 
   window.addEventListener('scroll', function() {
     // Si la parte superior de la sección "hero" está fuera de la pantalla (es decir, ya hiciste scroll):
@@ -129,26 +131,28 @@ llery/thumb/${i}.avif" type="image/avif">
     }
   });
 
-  function carruselProductos() {
-    const carrusel = document.querySelector('.productos-carrusel');
-    if (!carrusel) return;
-  
-    const btnPrev = document.querySelector('.carrusel-btn.prev');
-    const btnNext = document.querySelector('.carrusel-btn.next');
-  
-    btnPrev?.addEventListener('click', function() {
-      carrusel.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-    btnNext?.addEventListener('click', function() {
-      carrusel.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-  
-    // Auto scroll cada 3 segundos (3000 milisegundos)
-    setInterval(() => {
-      carrusel.scrollBy({ left: 300, behavior: 'smooth' });
-    }, 3000);
-  }
-  
+// Carrusel de productos
+function carruselProductos() {
+  const carrusel = document.querySelector('.productos-carrusel');
+  if (!carrusel) return;
+
+  const btnPrev = document.querySelector('.carrusel-btn.prev');
+  const btnNext = document.querySelector('.carrusel-btn.next');
+
+  btnPrev?.addEventListener('click', function() {
+    carrusel.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  btnNext?.addEventListener('click', function() {
+    carrusel.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  // Auto scroll cada 3 segundos (3000 milisegundos)
+  setInterval(() => {
+    carrusel.scrollBy({ left: 300, behavior: 'smooth' });
+  }, 3000);
+}
+
+
 // Scroll suave en navegación
 function scrollNav() {
   const navLinks = document.querySelectorAll('#main-nav a');
@@ -200,7 +204,6 @@ function menuHamburguesa(){
     body.classList.toggle('menu-open', abierto);
     menuBtn.setAttribute('aria-expanded', abierto ? 'true' : 'false');
   });
-
 }
 //hasta que cambia el menu fixed es que cambia esto
 

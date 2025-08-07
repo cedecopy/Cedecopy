@@ -5,10 +5,12 @@ header {
   background: v.$blanco;
   padding: 1rem 2rem;
 
+
   .header-top {
     display: flex;
     justify-content: center;
     padding-bottom: 0rem;
+
 
     .logo-link {
       display: flex;
@@ -16,6 +18,7 @@ header {
       gap: 1rem;
       text-decoration: none;
       color: v.$blanco;
+
 
       .logo-img {
         height: 100px;
@@ -25,6 +28,7 @@ header {
     }
   }
 
+
   .header-bottom {
     display: flex;
     align-items: center;
@@ -33,6 +37,7 @@ header {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     padding-top: 0rem;
 
+
     .menu-icon {
       font-size: 2rem;
       background: transparent;
@@ -40,6 +45,7 @@ header {
       border: none;
       cursor: pointer;
       display: none; /* Oculto por defecto */
+
 
       @include m.tablet {
         display: block; /* Visible en tablet y dispositivos más pequeños */
@@ -51,6 +57,7 @@ header {
         z-index: 1001;
       }
     }
+
 
     #main-nav {
       gap: 2rem;
@@ -71,10 +78,12 @@ header {
         flex-direction: column;
         align-items: center; /* Centrar los elementos del menú */
 
+
         &.open {
           display: flex; /* Mostrar el menú cuando la clase 'open' está presente */
         }
       }
+
 
       ul {
         display: flex;
@@ -83,10 +92,12 @@ header {
         padding: 0;
         margin: 0;
 
+
         @include m.tablet {
           flex-direction: column;
           gap: 1rem;
         }
+
 
         li a {
           color: v.$negro;
@@ -98,6 +109,7 @@ header {
           display: inline-block;
           transition: color 0.3s ease;
 
+
           &:hover,
           &:focus {
             color: v.$azul-menu;
@@ -107,6 +119,7 @@ header {
     }
   }
 }
+
 
 // Header fijo (fuera del bloque anidado)
 header.fixed {
@@ -120,15 +133,18 @@ header.fixed {
   transition: background 0.2s, box-shadow 0.2s;
 }
 
+
 // Ajuste para que el contenido no quede oculto
 header.fixed + main {
   margin-top: 120px; // Ajusta este valor a la altura de tu header
 }
 
+
 #main-nav {
   left: -300px;
   transition: left 0.3s ease;
  
+
 
   &.open {
     left: 0;
