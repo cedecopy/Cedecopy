@@ -54,7 +54,39 @@ function crearGaleria() {
 function mostrarImagen(i) {
   const imagen = document.createElement('PICTURE')
  imagen.innerHTML = `
-    <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+    <source srcset="build/img/ga
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required />
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="ubicacion">
+            <h2>Ubicación</h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d481819.8627539268!2d-99.31428142334357!3d19.359725081095416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e2acce4173e5%3A0x72a4a2ab5da4914d!2sCEDECOPY!5e0!3m2!1ses!2smx!4v1748885180766!5m2!1ses!2smx" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Mapa de ubicación de CEDECOPY"></iframe>
+                <h6>Octavio Sentíes Local 2, 2da Amp Santiago Acahualtepec, Iztapalapa, 09608 Ciudad de México, CDMX</h6>
+            </div>
+        </section>
+    </main>
+llery/thumb/${i}.avif" type="image/avif">
     <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
     <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
 `;
@@ -97,22 +129,26 @@ function mostrarImagen(i) {
     }
   });
 
-// Carrusel de productos
-function carruselProductos() {
-  const carrusel = document.querySelector('.productos-carrusel');
-  if (!carrusel) return;
-
-  const btnPrev = document.querySelector('.carrusel-btn.prev');
-  const btnNext = document.querySelector('.carrusel-btn.next');
-
-  btnPrev?.addEventListener('click', function() {
-    carrusel.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-  btnNext?.addEventListener('click', function() {
-    carrusel.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-}
-
+  function carruselProductos() {
+    const carrusel = document.querySelector('.productos-carrusel');
+    if (!carrusel) return;
+  
+    const btnPrev = document.querySelector('.carrusel-btn.prev');
+    const btnNext = document.querySelector('.carrusel-btn.next');
+  
+    btnPrev?.addEventListener('click', function() {
+      carrusel.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+    btnNext?.addEventListener('click', function() {
+      carrusel.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  
+    // Auto scroll cada 3 segundos (3000 milisegundos)
+    setInterval(() => {
+      carrusel.scrollBy({ left: 300, behavior: 'smooth' });
+    }, 3000);
+  }
+  
 // Scroll suave en navegación
 function scrollNav() {
   const navLinks = document.querySelectorAll('#main-nav a');
@@ -167,3 +203,5 @@ function menuHamburguesa(){
 
 }
 //hasta que cambia el menu fixed es que cambia esto
+
+

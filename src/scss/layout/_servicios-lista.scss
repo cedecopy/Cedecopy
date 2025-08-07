@@ -3,7 +3,7 @@
 
 .servicios-lista {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
   flex-wrap: wrap;
   padding: 2rem 1rem;
@@ -17,6 +17,7 @@
   }
 }
 
+
 .servicio-item {
   background: v.$blanco;
   padding: 2.5rem;
@@ -24,6 +25,7 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 600px;
   text-align: center;
+  display: block;  // importante para <a>
 
   @include m.tablet {
     width: 45%;
